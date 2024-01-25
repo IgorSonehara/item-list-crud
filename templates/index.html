@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple CRUD App</title>
+    <!-- Add your CSS here -->
+</head>
+<body>
+    <h1>Item List</h1>
+    <ul>
+        {% for item in items %}
+            <li>{{ item[1] }} - {{ item[2] }} <a href="/delete/{{ item[0] }}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <form action="/add" method="post">
+        <input type="text" name="name" placeholder="Item Name" required>
+        <input type="text" name="description" placeholder="Item Description" required>
+        <button type="submit">Add Item</button>
+    </form>
+</body>
+</html>
